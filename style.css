@@ -18,9 +18,13 @@ body {
 
 .footer {
     background-color: blueviolet;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
+    
 }
 
 .row {
@@ -36,8 +40,11 @@ body {
 
 .selectors {
     display: flex;
+    flex-direction: column;
     width: 200px;
+    align-items: center;
     justify-content: center;
+    gap: 50px   ;
 }
 
 #container {

@@ -26,10 +26,10 @@ let drawGrid = (number) => {
 let paintSquare = () => {
     square.style.cssText = 'background-color: black;';
 }
-let paintGrid = () => {
+let paintGrid = (color = 'black') => {
     const squares = document.querySelectorAll('.square');
 
-    squares.forEach((square) => square.addEventListener('mouseover', () => square.style.backgroundColor = 'black'));
+    squares.forEach((square) => square.addEventListener('mouseover', () => square.style.backgroundColor = color));
     
 }
 let deleteGrid = () => {
@@ -37,7 +37,7 @@ let deleteGrid = () => {
     rows.forEach(row => row.remove());
 }
 let redrawGrid = () => {
-    const btn = document.querySelector('.button')
+    const btn = document.querySelector('.grd')
     btn.addEventListener('click', () => {
         let number = +prompt('Please give the number to rearrange grid');
         deleteGrid();
@@ -47,6 +47,17 @@ let redrawGrid = () => {
     })
 }
 
+let changeColor = () => {
+    let clrBtn = document.querySelector('.clr');
+    
+    clrBtn.addEventListener('click', () => {
+        let color = prompt('Enter the color to paint');
+        paintGrid(color);
+    }
+    );
+}
+
 drawGrid(16);
 paintGrid();
 redrawGrid();
+changeColor();
